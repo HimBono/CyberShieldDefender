@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - CyberShield</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-page">
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="assets/logo.svg" alt="CyberShield Logo" class="logo-small">
+                <h2>CYBERSHIELD</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dashboard-courses.html">
+                            <i class="fas fa-book"></i>
+                            <span>My Courses</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="assessment.html">
+                            <i class="fas fa-clipboard-check"></i>
+                            <span>Assessment</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dashboard-certificates.html">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certificates</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dashboard-profile.html">
+                            <i class="fas fa-user-circle"></i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dashboard-settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logout-btn" class="btn btn-outline btn-block">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="mobile-sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="header-search">
+                    <div class="search-input">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <img src="assets/avatar-placeholder.jpg" alt="User Avatar" id="user-avatar">
+                        </div>
+                        <div class="user-info">
+                            <h4 id="user-name">MR. USMAN</h4>
+                            <p id="user-company">XYZ</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <div class="page-header">
+                    <h1>Welcome, <span id="welcome-name">Usman</span>!</h1>
+                    <p class="date" id="current-date">Tuesday, May 20, 2025</p>
+                </div>
+
+                <div class="dashboard-overview">
+                    <div class="progress-cards">
+                        <div class="progress-card">
+                            <div class="progress-icon">
+                                <i class="fas fa-book-reader"></i>
+                            </div>
+                            <div class="progress-details">
+                                <h3>Course Progress</h3>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 65%"></div>
+                                </div>
+                                <p>2 of 3 courses completed</p>
+                            </div>
+                        </div>
+                        <div class="progress-card">
+                            <div class="progress-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="progress-details">
+                                <h3>Achievements</h3>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 40%"></div>
+                                </div>
+                                <p>4 of 10 badges earned</p>
+                            </div>
+                        </div>
+                        <div class="progress-card">
+                            <div class="progress-icon">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <div class="progress-details">
+                                <h3>Assessment Score</h3>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 75%"></div>
+                                </div>
+                                <p>75% on last assessment</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-sections">
+                        <div class="dashboard-section">
+                            <div class="section-header">
+                                <h2>My Courses</h2>
+                                <a href="dashboard-courses.html" class="view-all">View All</a>
+                            </div>
+                            <div class="course-list">
+                                <div class="course-item">
+                                    <div class="course-image">
+                                        <img src="assets/phishing-course.png" alt="Phishing Awareness and Prevention">
+                                    </div>
+                                    <div class="course-info">
+                                        <h3>Phishing Awareness and Prevention</h3>
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 100%"></div>
+                                        </div>
+                                        <p>Completed</p>
+                                    </div>
+                                </div>
+                                <div class="course-item">
+                                    <div class="course-image">
+                                        <img src="assets/password-course.png" alt="Password Security">
+                                    </div>
+                                    <div class="course-info">
+                                        <h3>Password Security</h3>
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 100%"></div>
+                                        </div>
+                                        <p>Completed</p>
+                                    </div>
+                                </div>
+                                <div class="course-item">
+                                    <div class="course-image">
+                                        <img src="assets/essentials-course.png" alt="Cybersecurity Essentials">
+                                    </div>
+                                    <div class="course-info">
+                                        <h3>Cybersecurity Essentials for Small Businesses</h3>
+                                        <div class="progress-bar">
+                                            <div class="progress" style="width: 30%"></div>
+                                        </div>
+                                        <p>30% Completed</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-section">
+                            <div class="section-header">
+                                <h2>Recent Assessments</h2>
+                                <a href="assessment.html" class="view-all">Take Assessment</a>
+                            </div>
+                            <div class="assessment-list">
+                                <div class="assessment-item">
+                                    <div class="assessment-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="assessment-info">
+                                        <h3>Phishing Attack Prevention</h3>
+                                        <p>Completed on: May 15, 2025</p>
+                                        <div class="score">
+                                            <span>Score: 85%</span>
+                                            <span class="badge success">Passed</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="assessment-item">
+                                    <div class="assessment-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="assessment-info">
+                                        <h3>Password Security</h3>
+                                        <p>Completed on: May 10, 2025</p>
+                                        <div class="score">
+                                            <span>Score: 75%</span>
+                                            <span class="badge success">Passed</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-sections">
+                        <div class="dashboard-section">
+                            <div class="section-header">
+                                <h2>Security News</h2>
+                            </div>
+                            <div class="news-list">
+                                <div class="news-item">
+                                    <div class="news-image">
+                                        <img src="assets/news1.jpg" alt="Top 5 SME Cybersecurity Mistakes & Solutions">
+                                    </div>
+                                    <div class="news-content">
+                                        <h3>Top 5 SME Cybersecurity Mistakes & Solutions</h3>
+                                        <p class="news-date">May 18, 2025</p>
+                                        <p class="news-excerpt">Learn about common security pitfalls that small businesses face and how to avoid them.</p>
+                                        <a href="#" class="read-more">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="news-item">
+                                    <div class="news-image">
+                                        <img src="assets/news2.jpg" alt="43% of Cyber Attacks Target Small Business">
+                                    </div>
+                                    <div class="news-content">
+                                        <h3>43% of Cyber Attacks Target Small Business</h3>
+                                        <p class="news-date">May 14, 2025</p>
+                                        <p class="news-excerpt">New study reveals alarming statistics about the targeting of SMEs by cybercriminals.</p>
+                                        <a href="#" class="read-more">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="news-item">
+                                    <div class="news-image">
+                                        <img src="assets/news3.jpg" alt="New Programme Launched to Help SMEs Handle Cyber Attacks">
+                                    </div>
+                                    <div class="news-content">
+                                        <h3>New Programme Launched to Help SMEs Handle Cyber Attacks</h3>
+                                        <p class="news-date">May 8, 2025</p>
+                                        <p class="news-excerpt">Government initiative aims to provide support and resources for small businesses.</p>
+                                        <a href="#" class="read-more">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.22.1/firebase-app.min.js"></script>
+    <!-- Add Firebase Auth SDK -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.22.1/firebase-auth.min.js"></script>
+    <!-- Add Firebase Firestore SDK -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.22.1/firebase-firestore.min.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/authGuard.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

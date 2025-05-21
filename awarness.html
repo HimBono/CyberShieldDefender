@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Awareness - CyberShield</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="assets/logo.svg" alt="CyberShield Logo" class="logo">
+            <div class="logo-text">
+                <h1>CYBERSHIELD</h1>
+                <p class="tagline">GUARD · GROW · PROSPER</p>
+            </div>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="awareness.html" class="active">Courses</a></li>
+                <li><a href="assessment.html">Assessment</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="auth-buttons" id="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Log In</a>
+                <a href="register.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            <div class="user-profile" id="user-profile" style="display: none;">
+                <div class="user-avatar">
+                    <img src="assets/avatar-placeholder.jpg" alt="User Avatar" id="user-avatar">
+                </div>
+                <div class="user-dropdown">
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="#" id="logout-link">Logout</a>
+                </div>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="course-hero">
+            <div class="course-hero-content">
+                <h1>Cybersecurity Awareness Courses</h1>
+                <p>Equip your team with essential knowledge and skills to defend against cyber threats. Our courses are designed specifically for small and medium enterprises.</p>
+                <div class="search-container">
+                    <div class="search-input">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search courses" id="course-search">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-courses">
+            <h2>Featured Courses</h2>
+            <div class="course-grid">
+                <div class="course-card" id="phishing">
+                    <div class="course-img">
+                        <img src="assets/phishing-course.png" alt="Phishing Awareness and Prevention">
+                        <div class="course-badge">Most Popular</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Phishing Awareness and Prevention</h3>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 8 hours</span>
+                            <span><i class="fas fa-star"></i> 4.8 (35 reviews)</span>
+                            <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                        </div>
+                        <p>Learn to identify various types of phishing attempts and protect your organization from this common attack vector.</p>
+                        <div class="course-footer">
+                            <p class="course-price">RM 50</p>
+                            <a href="course-detail.html?id=phishing" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" id="password">
+                    <div class="course-img">
+                        <img src="assets/password-course.png" alt="Password Security">
+                    </div>
+                    <div class="course-content">
+                        <h3>Password Security</h3>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 6 hours</span>
+                            <span><i class="fas fa-star"></i> 4.7 (28 reviews)</span>
+                            <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                        </div>
+                        <p>Implement robust password policies and practices to safeguard your business accounts and sensitive information.</p>
+                        <div class="course-footer">
+                            <p class="course-price">RM 50</p>
+                            <a href="course-detail.html?id=password" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" id="essentials">
+                    <div class="course-img">
+                        <img src="assets/essentials-course.png" alt="Cybersecurity Essentials for Small Businesses">
+                        <div class="course-badge bg-success">Free</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Cybersecurity Essentials for Small Businesses</h3>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 5 hours</span>
+                            <span><i class="fas fa-star"></i> 4.9 (42 reviews)</span>
+                            <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                        </div>
+                        <p>An introductory course covering the fundamental cybersecurity concepts every small business should know.</p>
+                        <div class="course-footer">
+                            <p class="course-price">FREE</p>
+                            <a href="course-detail.html?id=essentials" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-categories">
+            <h2>Browse by Category</h2>
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all">All Courses</button>
+                <button class="category-tab" data-category="security-fundamentals">Security Fundamentals</button>
+                <button class="category-tab" data-category="threat-protection">Threat Protection</button>
+                <button class="category-tab" data-category="compliance">Compliance</button>
+                <button class="category-tab" data-category="incident-response">Incident Response</button>
+            </div>
+
+            <div class="course-grid" id="category-courses">
+                <div class="course-card" data-categories="security-fundamentals">
+                    <div class="course-img">
+                        <img src="assets/social-engineering-course.png" alt="Social Engineering Awareness">
+                    </div>
+                    <div class="course-content">
+                        <h3>Social Engineering Awareness</h3>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 7 hours</span>
+                            <span><i class="fas fa-star"></i> 4.6 (31 reviews)</span>
+                            <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                        </div>
+                        <p>Understand the psychological tactics used by attackers and learn how to recognize and respond to social engineering attempts.</p>
+                        <div class="course-footer">
+                            <p class="course-price">RM 50</p>
+                            <a href="course-detail.html?id=social-engineering" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" data-categories="threat-protection compliance">
+                    <div class="course-img">
+                        <img src="assets/data-protection-course.png" alt="Data Protection and Privacy">
+                    </div>
+                    <div class="course-content">
+                        <h3>Data Protection and Privacy</h3>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 10 hours</span>
+                            <span><i class="fas fa-star"></i> 4.8 (39 reviews)</span>
+                            <span><i class="fas fa-user-graduate"></i> Intermediate</span>
+                        </div>
+                        <p>Learn best practices for protecting sensitive data and complying with relevant privacy regulations.</p>
+                        <div class="course-footer">
+                            <p class="course-price">RM 75</p>
+                            <a href="course-detail.html?id=data-protection" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" data-categories="incident-response">
+                    <div class="course-img">
+                        <img src="assets/ransomware-course.png" alt="Ransomware Protection">
+                    </div>
+                    <div class="course-content">
+                        <h3>Ransomware Protection</h3>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 8 hours</span>
+                            <span><i class="fas fa-star"></i> 4.9 (27 reviews)</span>
+                            <span><i class="fas fa-user-graduate"></i> Intermediate</span>
+                        </div>
+                        <p>Develop strategies to prevent ransomware attacks and create effective recovery plans.</p>
+                        <div class="course-footer">
+                            <p class="course-price">RM 65</p>
+                            <a href="course-detail.html?id=ransomware" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" data-categories="security-fundamentals threat-protection">
+                    <div class="course-img">
+                        <img src="assets/mobile-security-course.png" alt="Mobile Device Security">
+                    </div>
+                    <div class="course-content">
+                        <h3>Mobile Device Security</h3>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 6 hours</span>
+                            <span><i class="fas fa-star"></i> 4.7 (23 reviews)</span>
+                            <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                        </div>
+                        <p>Secure smartphones, tablets, and other mobile devices in your workplace environment.</p>
+                        <div class="course-footer">
+                            <p class="course-price">RM 50</p>
+                            <a href="course-detail.html?id=mobile-security" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" data-categories="compliance">
+                    <div class="course-img">
+                        <img src="assets/compliance-course.png" alt="Cybersecurity Compliance for SMEs">
+                    </div>
+                    <div class="course-content">
+                        <h3>Cybersecurity Compliance for SMEs</h3>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 12 hours</span>
+                            <span><i class="fas fa-star"></i> 4.8 (31 reviews)</span>
+                            <span><i class="fas fa-user-graduate"></i> Advanced</span>
+                        </div>
+                        <p>Navigate regulations and standards relevant to your industry and implement compliant security practices.</p>
+                        <div class="course-footer">
+                            <p class="course-price">RM 85</p>
+                            <a href="course-detail.html?id=compliance" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" data-categories="incident-response">
+                    <div class="course-img">
+                        <img src="assets/incident-response-course.png" alt="Security Incident Response">
+                    </div>
+                    <div class="course-content">
+                        <h3>Security Incident Response</h3>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 10 hours</span>
+                            <span><i class="fas fa-star"></i> 4.9 (22 reviews)</span>
+                            <span><i class="fas fa-user-graduate"></i> Intermediate</span>
+                        </div>
+                        <p>Develop and implement effective incident response plans to minimize damage from security breaches.</p>
+                        <div class="course-footer">
+                            <p class="course-price">RM 75</p>
+                            <a href="course-detail.html?id=incident-response" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-bundles">
+            <h2>Course Bundles</h2>
+            <p>Save money and enhance your knowledge with our carefully curated course bundles.</p>
+            
+            <div class="bundle-grid">
+                <div class="bundle-card">
+                    <div class="bundle-header">
+                        <h3>Essential Security Bundle</h3>
+                        <div class="bundle-badge">20% Off</div>
+                    </div>
+                    <div class="bundle-content">
+                        <ul class="bundle-courses">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Phishing Awareness and Prevention</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Password Security</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Social Engineering Awareness</span>
+                            </li>
+                        </ul>
+                        <div class="bundle-pricing">
+                            <p class="original-price">RM 150</p>
+                            <p class="bundle-price">RM 120</p>
+                        </div>
+                        <a href="bundle-detail.html?id=essential" class="btn btn-primary btn-block">Get Bundle</a>
+                    </div>
+                </div>
+
+                <div class="bundle-card">
+                    <div class="bundle-header">
+                        <h3>Advanced Security Bundle</h3>
+                        <div class="bundle-badge">25% Off</div>
+                    </div>
+                    <div class="bundle-content">
+                        <ul class="bundle-courses">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Data Protection and Privacy</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Ransomware Protection</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Security Incident Response</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Cybersecurity Compliance for SMEs</span>
+                            </li>
+                        </ul>
+                        <div class="bundle-pricing">
+                            <p class="original-price">RM 300</p>
+                            <p class="bundle-price">RM 225</p>
+                        </div>
+                        <a href="bundle-detail.html?id=advanced" class="btn btn-primary btn-block">Get Bundle</a>
+                    </div>
+                </div>
+
+                <div class="bundle-card">
+                    <div class="bundle-header">
+                        <h3>Complete Security Bundle</h3>
+                        <div class="bundle-badge">30% Off</div>
+                    </div>
+                    <div class="bundle-content">
+                        <ul class="bundle-courses">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>All 8 Security Courses</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Certificate of Completion</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>1-Hour Security Consultation</span>
+                            </li>
+                        </ul>
+                        <div class="bundle-pricing">
+                            <p class="original-price">RM 450</p>
+                            <p class="bundle-price">RM 315</p>
+                        </div>
+                        <a href="bundle-detail.html?id=complete" class="btn btn-primary btn-block">Get Bundle</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Our Learners Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"The Phishing Awareness course was eye-opening. Our team is much better at spotting suspicious emails now, and we've avoided several potential attacks since implementing what we learned."</p>
+                        <div class="testimonial-author">
+                            <img src="assets/testimonial1.jpg" alt="John Mario" class="author-img">
+                            <div class="author-info">
+                                <h4>John Mario</h4>
+                                <p>IT Manager, XYZ Company</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"The practical exercises in the Password Security course helped us implement robust password policies that are both secure and user-friendly. Excellent content!"</p>
+                        <div class="testimonial-author">
+                            <img src="assets/testimonial2.jpg" alt="Bob Mario" class="author-img">
+                            <div class="author-info">
+                                <h4>Bob Mario</h4>
+                                <p>CEO, ABC Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"As a small business owner with limited IT resources, the Cybersecurity Essentials course gave me the knowledge I needed to protect my business. The content was easy to understand yet comprehensive."</p>
+                        <div class="testimonial-author">
+                            <img src="assets/testimonial3.jpg" alt="Kenny Paul" class="author-img">
+                            <div class="author-info">
+                                <h4>Kenny Paul</h4>
+                                <p>Owner, Local Retail Store</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Enhance Your Cybersecurity Knowledge?</h2>
+                <p>Start learning today and protect your business from cyber threats.</p>
+                <a href="#" class="btn btn-primary btn-large">Browse All Courses</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logo.svg" alt="CyberShield Logo" class="logo-small">
+                <p>CYBERSHIELD</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="awareness.html">Courses</a></li>
+                    <li><a href="assessment.html">Assessment</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-envelope"></i> info@cybershield.com</p>
+                <p><i class="fas fa-phone"></i> +123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; Copyright 2025 CyberShield. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="close-menu">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="awareness.html">Courses</a></li>
+            <li><a href="assessment.html">Assessment</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Log In</a></li>
+            <li><a href="register.html">Sign Up</a></li>
+        </ul>
+    </div>
+
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.22.1/firebase-app.min.js"></script>
+    <!-- Add Firebase Auth SDK -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.22.1/firebase-auth.min.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/courses.js"></script>
+</body>
+</html>
