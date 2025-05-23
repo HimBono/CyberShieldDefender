@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Detail - CyberShield</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="assets/logo.svg" alt="CyberShield Logo" class="logo">
+            <div class="logo-text">
+                <h1>CYBERSHIELD</h1>
+                <p class="tagline">GUARD · GROW · PROSPER</p>
+            </div>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="awareness.html" class="active">Courses</a></li>
+                <li><a href="assessment.html">Assessment</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="auth-buttons" id="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Log In</a>
+                <a href="register.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            <div class="user-profile" id="user-profile" style="display: none;">
+                <div class="user-avatar">
+                    <img src="assets/avatar-placeholder.jpg" alt="User Avatar" id="user-avatar">
+                </div>
+                <div class="user-dropdown">
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="#" id="logout-link">Logout</a>
+                </div>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="course-detail-section">
+            <div class="course-detail-container">
+                <div class="course-header">
+                    <h1 id="course-title">Loading...</h1>
+                    <p id="course-description">Loading course information...</p>
+                </div>
+
+                <div class="course-content-wrapper">
+                    <div class="video-player-container">
+                        <div id="auth-notice" class="auth-notice">
+                            <div class="notice-content">
+                                <i class="fas fa-lock"></i>
+                                <h3>Login Required</h3>
+                                <p>Please log in or create an account to access this course.</p>
+                                <div class="notice-actions">
+                                    <a href="login.html" class="btn btn-primary">Log In</a>
+                                    <a href="register.html" class="btn btn-secondary">Sign Up</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="video-content" style="display: none;">
+                            <video id="course-video" controls>
+                                <source src="" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            
+                            <div class="video-controls">
+                                <div class="progress-info">
+                                    <div class="progress-bar">
+                                        <div class="progress" id="course-progress" style="width: 0%"></div>
+                                    </div>
+                                    <p>Course Progress: <span id="progress-percentage">0%</span> Complete</p>
+                                </div>
+                                
+                                <div class="course-actions">
+                                    <button id="mark-complete" class="btn btn-primary" disabled>
+                                        <i class="fas fa-check-circle"></i> Mark as Complete
+                                    </button>
+                                    <button id="take-assessment" class="btn btn-secondary" disabled>
+                                        <i class="fas fa-clipboard-check"></i> Take Assessment
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-sidebar">
+                        <div class="course-info-card">
+                            <h3>Course Information</h3>
+                            <ul class="course-meta">
+                                <li>
+                                    <i class="fas fa-clock"></i>
+                                    <span>Duration: <span id="course-duration">8 hours</span></span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-user-graduate"></i>
+                                    <span>Level: <span id="course-level">Beginner</span></span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-star"></i>
+                                    <span>Rating: <span id="course-rating">4.8</span> (35 reviews)</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-certificate"></i>
+                                    <span>Certificate: Yes</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <span>Price: <strong>FREE</strong></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="course-modules">
+                            <h3>Course Content</h3>
+                            <div class="module-list">
+                                <div class="module-item active">
+                                    <i class="fas fa-play-circle"></i>
+                                    <span>Introduction</span>
+                                    <span class="duration">10 min</span>
+                                </div>
+                                <div class="module-item">
+                                    <i class="fas fa-lock"></i>
+                                    <span>Module 1: Basics</span>
+                                    <span class="duration">45 min</span>
+                                </div>
+                                <div class="module-item">
+                                    <i class="fas fa-lock"></i>
+                                    <span>Module 2: Advanced Topics</span>
+                                    <span class="duration">60 min</span>
+                                </div>
+                                <div class="module-item">
+                                    <i class="fas fa-lock"></i>
+                                    <span>Module 3: Practical Examples</span>
+                                    <span class="duration">30 min</span>
+                                </div>
+                                <div class="module-item">
+                                    <i class="fas fa-clipboard-check"></i>
+                                    <span>Final Assessment</span>
+                                    <span class="duration">20 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-description-full">
+                    <h2>About This Course</h2>
+                    <div id="course-full-description">
+                        <p>Loading course details...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logo.svg" alt="CyberShield Logo" class="logo-small">
+                <p>CYBERSHIELD</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="awareness.html">Courses</a></li>
+                    <li><a href="assessment.html">Assessment</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-envelope"></i> info@cybershield.com</p>
+                <p><i class="fas fa-phone"></i> +123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; Copyright 2025 CyberShield. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="close-menu">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="awareness.html">Courses</a></li>
+            <li><a href="assessment.html">Assessment</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Log In</a></li>
+            <li><a href="register.html">Sign Up</a></li>
+        </ul>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore-compat.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/course-detail.js"></script>
+</body>
+</html>

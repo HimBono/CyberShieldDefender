@@ -3,331 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel - CyberShield</title>
+    <title>Admin Dashboard - CyberShield</title>
     <link rel="stylesheet" href="styles.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="admin-page">
     <div class="admin-container">
+        <!-- Sidebar -->
         <aside class="admin-sidebar">
             <div class="sidebar-header">
                 <img src="assets/logo.svg" alt="CyberShield Logo" class="logo-small">
-                <h2>CYBERSHIELD</h2>
             </div>
             <div class="admin-profile">
                 <div class="admin-avatar">
-                    <img src="assets/admin-avatar.jpg" alt="Admin Avatar" id="admin-avatar">
+                    <img src="assets/admin-avatar.png" alt="Admin Avatar">
                 </div>
                 <div class="admin-info">
-                    <h4 id="admin-name">Admin</h4>
-                    <p>Administrator</p>
+                    <h4>Administrator</h4>
+                    <p>Super Admin</p>
                 </div>
             </div>
             <nav class="admin-nav">
                 <ul>
                     <li class="active">
-                        <a href="admin.html">
-                            <i class="fas fa-tachometer-alt"></i>
-                            <span>Dashboard</span>
-                        </a>
+                        <a href="#dashboard"><i class="fas fa-home"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="#users-section">
-                            <i class="fas fa-users"></i>
-                            <span>Users</span>
-                        </a>
+                        <a href="#users"><i class="fas fa-users"></i> Users</a>
                     </li>
                     <li>
-                        <a href="#assessment-section">
-                            <i class="fas fa-clipboard-check"></i>
-                            <span>Assessments</span>
-                        </a>
+                        <a href="#courses"><i class="fas fa-book"></i> Courses</a>
                     </li>
                     <li>
-                        <a href="#messages-section">
-                            <i class="fas fa-envelope"></i>
-                            <span>Messages</span>
-                        </a>
+                        <a href="#assessments"><i class="fas fa-tasks"></i> Assessments</a>
                     </li>
                     <li>
-                        <a href="#courses-section">
-                            <i class="fas fa-book"></i>
-                            <span>Courses</span>
-                        </a>
+                        <a href="#reports"><i class="fas fa-chart-bar"></i> Reports</a>
                     </li>
                     <li>
-                        <a href="#settings-section">
-                            <i class="fas fa-cog"></i>
-                            <span>Settings</span>
-                        </a>
+                        <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
                     </li>
                 </ul>
             </nav>
             <div class="sidebar-footer">
-                <button id="admin-logout-btn" class="btn btn-outline btn-block">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <span>Logout</span>
+                <button onclick="handleAdminLogout()" class="btn btn-outline">
+                    <i class="fas fa-sign-out-alt"></i> Logout
                 </button>
             </div>
         </aside>
 
+        <!-- Main Content -->
         <main class="admin-main">
             <header class="admin-header">
-                <div class="mobile-sidebar-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <h1>Admin Dashboard</h1>
+                <h1>Dashboard</h1>
                 <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
                     <div class="notifications">
                         <i class="fas fa-bell"></i>
-                        <span class="notification-badge">5</span>
+                        <span class="badge">3</span>
                     </div>
                 </div>
             </header>
 
-            <div class="admin-content">
-                <section class="admin-overview">
-                    <div class="overview-cards">
-                        <div class="overview-card">
-                            <div class="card-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="card-content">
-                                <h3>Total Users</h3>
-                                <p class="count" id="users-count">0</p>
-                                <p class="change positive">+12% from last month</p>
-                            </div>
+            <!-- Overview Cards -->
+            <section class="admin-overview">
+                <div class="overview-cards">
+                    <div class="overview-card">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
                         </div>
-                        <div class="overview-card">
-                            <div class="card-icon">
-                                <i class="fas fa-clipboard-check"></i>
-                            </div>
-                            <div class="card-content">
-                                <h3>Assessments</h3>
-                                <p class="count" id="assessments-count">0</p>
-                                <p class="change positive">+8% from last month</p>
-                            </div>
-                        </div>
-                        <div class="overview-card">
-                            <div class="card-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="card-content">
-                                <h3>New Messages</h3>
-                                <p class="count" id="messages-count">0</p>
-                                <p class="change negative">-3% from last month</p>
-                            </div>
-                        </div>
-                        <div class="overview-card">
-                            <div class="card-icon">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <div class="card-content">
-                                <h3>Course Enrollments</h3>
-                                <p class="count" id="enrollments-count">0</p>
-                                <p class="change positive">+15% from last month</p>
-                            </div>
+                        <div class="card-content">
+                            <h3>Total Users</h3>
+                            <p class="count">1,234</p>
+                            <p class="change positive">+12% <span>vs last month</span></p>
                         </div>
                     </div>
-                </section>
-
-                <section id="users-section" class="admin-section">
-                    <div class="section-header">
-                        <h2>Users</h2>
-                        <div class="section-actions">
-                            <button class="btn btn-outline">
-                                <i class="fas fa-filter"></i> Filter
-                            </button>
-                            <button class="btn btn-primary">
-                                <i class="fas fa-plus"></i> Add User
-                            </button>
+                    <div class="overview-card">
+                        <div class="card-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Active Courses</h3>
+                            <p class="count">45</p>
+                            <p class="change positive">+5% <span>vs last month</span></p>
                         </div>
                     </div>
-                    <div class="table-container">
-                        <table class="data-table" id="users-table">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Company</th>
-                                    <th>Status</th>
-                                    <th>Joined Date</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Will be populated by JavaScript -->
-                            </tbody>
-                        </table>
-                        <div id="users-loading" class="loading-indicator">
-                            <div class="spinner"></div>
-                            <p>Loading users...</p>
+                    <div class="overview-card">
+                        <div class="card-icon">
+                            <i class="fas fa-certificate"></i>
                         </div>
-                        <div id="users-error" class="error-message" style="display: none;"></div>
-                    </div>
-                    <div class="pagination">
-                        <button class="pagination-prev" disabled>
-                            <i class="fas fa-chevron-left"></i> Previous
-                        </button>
-                        <div class="pagination-info">
-                            Page <span id="users-current-page">1</span> of <span id="users-total-pages">1</span>
-                        </div>
-                        <button class="pagination-next">
-                            Next <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
-                </section>
-
-                <section id="assessment-section" class="admin-section">
-                    <div class="section-header">
-                        <h2>Assessments</h2>
-                        <div class="section-actions">
-                            <button class="btn btn-outline">
-                                <i class="fas fa-filter"></i> Filter
-                            </button>
-                            <button class="btn btn-primary">
-                                <i class="fas fa-download"></i> Export
-                            </button>
+                        <div class="card-content">
+                            <h3>Certifications</h3>
+                            <p class="count">892</p>
+                            <p class="change positive">+8% <span>vs last month</span></p>
                         </div>
                     </div>
-                    <div class="table-container">
-                        <table class="data-table" id="assessments-table">
-                            <thead>
-                                <tr>
-                                    <th>User</th>
-                                    <th>Assessment Type</th>
-                                    <th>Score</th>
-                                    <th>Result</th>
-                                    <th>Completion Date</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Will be populated by JavaScript -->
-                            </tbody>
-                        </table>
-                        <div id="assessments-loading" class="loading-indicator">
-                            <div class="spinner"></div>
-                            <p>Loading assessments...</p>
+                    <div class="overview-card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
                         </div>
-                        <div id="assessments-error" class="error-message" style="display: none;"></div>
-                    </div>
-                    <div class="pagination">
-                        <button class="pagination-prev" disabled>
-                            <i class="fas fa-chevron-left"></i> Previous
-                        </button>
-                        <div class="pagination-info">
-                            Page <span id="assessments-current-page">1</span> of <span id="assessments-total-pages">1</span>
-                        </div>
-                        <button class="pagination-next">
-                            Next <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
-                </section>
-
-                <section id="messages-section" class="admin-section">
-                    <div class="section-header">
-                        <h2>Messages</h2>
-                        <div class="section-actions">
-                            <button class="btn btn-outline">
-                                <i class="fas fa-filter"></i> Filter
-                            </button>
-                            <button class="btn btn-primary">
-                                <i class="fas fa-download"></i> Export
-                            </button>
-                        </div>
-                    </div>
-                    <div class="table-container">
-                        <table class="data-table" id="messages-table">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Subject</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Will be populated by JavaScript -->
-                            </tbody>
-                        </table>
-                        <div id="messages-loading" class="loading-indicator">
-                            <div class="spinner"></div>
-                            <p>Loading messages...</p>
-                        </div>
-                        <div id="messages-error" class="error-message" style="display: none;"></div>
-                    </div>
-                    <div class="pagination">
-                        <button class="pagination-prev" disabled>
-                            <i class="fas fa-chevron-left"></i> Previous
-                        </button>
-                        <div class="pagination-info">
-                            Page <span id="messages-current-page">1</span> of <span id="messages-total-pages">1</span>
-                        </div>
-                        <button class="pagination-next">
-                            Next <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
-                </section>
-
-                <div id="message-modal" class="modal">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3>Message Details</h3>
-                            <button class="close-modal">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="message-details">
-                                <div class="detail-group">
-                                    <label>From:</label>
-                                    <p id="message-from"></p>
-                                </div>
-                                <div class="detail-group">
-                                    <label>Email:</label>
-                                    <p id="message-email"></p>
-                                </div>
-                                <div class="detail-group">
-                                    <label>Phone:</label>
-                                    <p id="message-phone"></p>
-                                </div>
-                                <div class="detail-group">
-                                    <label>Company:</label>
-                                    <p id="message-company"></p>
-                                </div>
-                                <div class="detail-group">
-                                    <label>Subject:</label>
-                                    <p id="message-subject"></p>
-                                </div>
-                                <div class="detail-group">
-                                    <label>Date:</label>
-                                    <p id="message-date"></p>
-                                </div>
-                                <div class="detail-group">
-                                    <label>Message:</label>
-                                    <div id="message-content" class="message-content"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-outline" id="delete-message">Delete</button>
-                            <button class="btn btn-primary" id="reply-message">Reply</button>
+                        <div class="card-content">
+                            <h3>Revenue</h3>
+                            <p class="count">RM 45,678</p>
+                            <p class="change positive">+15% <span>vs last month</span></p>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- Recent Users -->
+            <section class="admin-section">
+                <div class="section-header">
+                    <h2>Recent Users</h2>
+                    <div class="section-actions">
+                        <button class="btn btn-outline">
+                            <i class="fas fa-filter"></i> Filter
+                        </button>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Add User
+                        </button>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Email</th>
+                                <th>Courses</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>John Doe</td>
+                                <td>john@example.com</td>
+                                <td>3</td>
+                                <td><span class="user-status active">Active</span></td>
+                                <td class="table-actions">
+                                    <button><i class="fas fa-edit"></i></button>
+                                    <button><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                    <button class="pagination-prev" disabled>
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    <span class="pagination-info">Page 1 of 10</span>
+                    <button class="pagination-next">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </section>
         </main>
     </div>
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore-compat.js"></script>
-    
-    <!-- Custom Scripts -->
-    <script src="js/main.js"></script>
-    <script src="js/admin.js"></script>
+    <script src="js/admin-auth.js"></script>
 </body>
 </html>

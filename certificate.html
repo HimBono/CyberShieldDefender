@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate - CyberShield</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Certificate specific styles */
+        .certificate-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .certificate-actions {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .certificate-actions .btn {
+            margin: 0 0.5rem;
+        }
+
+        .certificate-wrapper {
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        #certificate {
+            width: 100%;
+            aspect-ratio: 1.414 / 1;
+            position: relative;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Georgia', serif;
+        }
+
+        .certificate-border {
+            position: absolute;
+            inset: 20px;
+            border: 3px solid #2563eb;
+            border-radius: 8px;
+        }
+
+        .certificate-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .certificate-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+        }
+
+        .certificate-title {
+            font-size: 3rem;
+            color: #2563eb;
+            margin: 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .certificate-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .certificate-body {
+            text-align: center;
+            max-width: 600px;
+            margin: 2rem 0;
+        }
+
+        .certificate-text {
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .recipient-name {
+            font-size: 2.5rem;
+            color: #2563eb;
+            font-weight: bold;
+            margin: 1.5rem 0;
+            font-family: 'Brush Script MT', cursive;
+        }
+
+        .course-name {
+            font-size: 1.5rem;
+            color: #333;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .certificate-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 100%;
+            max-width: 600px;
+            margin-top: 3rem;
+        }
+
+        .signature-block {
+            text-align: center;
+            flex: 1;
+        }
+
+        .signature-line {
+            width: 200px;
+            height: 1px;
+            background: #666;
+            margin: 0 auto 0.5rem;
+        }
+
+        .signature-name {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .signature-title {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .certificate-date {
+            text-align: center;
+            flex: 1;
+        }
+
+        .certificate-seal {
+            width: 100px;
+            height: 100px;
+            background: #2563eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .verification-code {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .certificate-container {
+                margin: 0;
+                padding: 0;
+            }
+
+            .certificate-actions {
+                display: none;
+            }
+
+            #certificate {
+                width: 297mm;
+                height: 210mm;
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #certificate {
+                padding: 30px;
+            }
+
+            .certificate-title {
+                font-size: 2rem;
+            }
+
+            .recipient-name {
+                font-size: 1.8rem;
+            }
+
+            .course-name {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="assets/logo.svg" alt="CyberShield Logo" class="logo">
+            <div class="logo-text">
+                <h1>CYBERSHIELD</h1>
+                <p class="tagline">GUARD · GROW · PROSPER</p>
+            </div>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="awareness.html">Courses</a></li>
+                <li><a href="assessment.html">Assessment</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="auth-buttons" id="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Log In</a>
+                <a href="register.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            <div class="user-profile" id="user-profile" style="display: none;">
+                <div class="user-avatar">
+                    <img src="assets/avatar-placeholder.jpg" alt="User Avatar" id="user-avatar">
+                </div>
+                <div class="user-dropdown">
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="#" id="logout-link">Logout</a>
+                </div>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="certificate-container">
+            <div class="certificate-actions">
+                <button onclick="printCertificate()" class="btn btn-primary">
+                    <i class="fas fa-print"></i> Print Certificate
+                </button>
+                <button onclick="downloadCertificate()" class="btn btn-secondary">
+                    <i class="fas fa-download"></i> Download as PDF
+                </button>
+                <a href="dashboard.html" class="btn btn-outline">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </a>
+            </div>
+
+            <div class="certificate-wrapper">
+                <div id="certificate">
+                    <div class="certificate-border"></div>
+                    
+                    <div class="certificate-header">
+                        <img src="assets/logo.svg" alt="CyberShield Logo" class="certificate-logo">
+                        <h1 class="certificate-title">Certificate of Completion</h1>
+                        <p class="certificate-subtitle">CYBERSHIELD TRAINING ACADEMY</p>
+                    </div>
+
+                    <div class="certificate-body">
+                        <p class="certificate-text">This is to certify that</p>
+                        <h2 class="recipient-name" id="recipient-name">John Doe</h2>
+                        <p class="certificate-text">has successfully completed the course</p>
+                        <h3 class="course-name" id="course-name">Cybersecurity Fundamentals</h3>
+                        <p class="certificate-text">
+                            with a score of <strong id="assessment-score">85%</strong> 
+                            on <span id="completion-date">January 15, 2025</span>
+                        </p>
+                    </div>
+
+                    <div class="certificate-footer">
+                        <div class="signature-block">
+                            <div class="signature-line"></div>
+                            <p class="signature-name">Dr. Sarah Johnson</p>
+                            <p class="signature-title">Director of Education</p>
+                        </div>
+                        
+                        <div class="certificate-seal">
+                            <div>
+                                CYBERSHIELD<br>
+                                CERTIFIED
+                            </div>
+                        </div>
+                        
+                        <div class="signature-block">
+                            <div class="signature-line"></div>
+                            <p class="signature-name">Michael Chen</p>
+                            <p class="signature-title">CEO, CyberShield</p>
+                        </div>
+                    </div>
+
+                    <div class="verification-code">
+                        Certificate ID: <span id="certificate-id">CS-2025-001234</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="close-menu">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="awareness.html">Courses</a></li>
+            <li><a href="assessment.html">Assessment</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Log In</a></li>
+            <li><a href="register.html">Sign Up</a></li>
+        </ul>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore-compat.js"></script>
+    
+    <!-- jsPDF for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const assessmentId = urlParams.get('assessment');
+        
+        // Load certificate data
+        async function loadCertificateData() {
+            const user = firebase.auth().currentUser;
+            if (!user || !assessmentId) {
+                window.location.href = 'dashboard.html';
+                return;
+            }
+            
+            try {
+                // Get assessment data
+                const assessmentDoc = await firebase.firestore()
+                    .collection('assessments')
+                    .doc(assessmentId)
+                    .get();
+                
+                if (!assessmentDoc.exists) {
+                    alert('Assessment not found');
+                    window.location.href = 'dashboard.html';
+                    return;
+                }
+                
+                const assessmentData = assessmentDoc.data();
+                
+                // Get user data
+                const userDoc = await firebase.firestore()
+                    .collection('users')
+                    .doc(user.uid)
+                    .get();
+                
+                const userData = userDoc.data();
+                
+                // Update certificate with data
+                document.getElementById('recipient-name').textContent = userData.displayName || userData.name || 'Student';
+                document.getElementById('course-name').textContent = assessmentData.courseName || 'Cybersecurity Course';
+                document.getElementById('assessment-score').textContent = `${assessmentData.score}%`;
+                
+                // Format date
+                const completionDate = assessmentData.completedAt?.toDate() || new Date();
+                const formattedDate = completionDate.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                document.getElementById('completion-date').textContent = formattedDate;
+                
+                // Generate certificate ID
+                const certId = `CS-${completionDate.getFullYear()}-${assessmentId.slice(-6).toUpperCase()}`;
+                document.getElementById('certificate-id').textContent = certId;
+                
+            } catch (error) {
+                console.error('Error loading certificate data:', error);
+                alert('Error loading certificate data');
+            }
+        }
+        
+        // Print certificate
+        function printCertificate() {
+            window.print();
+        }
+        
+        // Download certificate as PDF
+        async function downloadCertificate() {
+            const { jsPDF } = window.jspdf;
+            
+            try {
+                // Convert certificate to canvas
+                const certificateElement = document.getElementById('certificate');
+                const canvas = await html2canvas(certificateElement, {
+                    scale: 2,
+                    useCORS: true,
+                    backgroundColor: '#ffffff'
+                });
+                
+                // Create PDF
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF('l', 'mm', 'a4');
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = pdf.internal.pageSize.getHeight();
+                
+                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+                
+                // Download PDF
+                const recipientName = document.getElementById('recipient-name').textContent;
+                const fileName = `CyberShield_Certificate_${recipientName.replace(/\s+/g, '_')}.pdf`;
+                pdf.save(fileName);
+                
+            } catch (error) {
+                console.error('Error generating PDF:', error);
+                alert('Error generating PDF. Please try printing instead.');
+            }
+        }
+        
+        // Check authentication and load data
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                loadCertificateData();
+            } else {
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+</body>
+</html>
